@@ -1,0 +1,38 @@
+public class Singleton {
+    // Приватний статичний екземпляр класу
+    private static Singleton instance;
+
+    // Приватний конструктор, щоб інші класи не могли створити екземпляр
+    private Singleton() {
+        // Це конструктор класу, ініціалізуємо його за необхідності
+    }
+
+    // Глобальна точка доступу до єдиного екземпляра
+    public static Singleton getInstance() {
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+
+    // Додайте інші методи та властивості, які ви хочете мати у цьому класі
+    public void showMessage() {
+        System.out.println("Це єдиний екземпляр класу Singleton.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Отримуємо єдиний екземпляр класу Singleton
+        Singleton singleton = Singleton.getInstance();
+
+        // Використовуємо єдиний екземпляр для виклику методу
+        singleton.showMessage();
+    }
+}
+
+
+
+// У цьому прикладі ми створили клас Singleton, який має єдиний приватний екземпляр і глобальний метод getInstance(), який повертає цей єдиний екземпляр. У методі main ми отримуємо єдиний екземпляр та викликаємо метод showMessage(), який виводить повідомлення на екран.
+
+За допомогою цього прикладу ви можете побачити, як працює паттерн Singleton, і як він забезпечує, що в програмі існує тільки один екземпляр класу Singleton.
